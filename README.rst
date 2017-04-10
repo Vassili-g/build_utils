@@ -2,6 +2,19 @@
 build_utils
 ============================
 
+.. image:: https://landscape.io/github/walchko/build_utils/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/walchko/build_utils/master
+   :alt: Code Health
+.. image:: https://img.shields.io/pypi/v/build_utils.svg
+    :target: https://pypi.python.org/pypi/build_utils/
+    :alt: Latest Version
+.. image:: https://img.shields.io/pypi/l/build_utils.svg
+    :target: https://pypi.python.org/pypi/build_utils/
+    :alt: License
+.. image:: https://img.shields.io/pypi/pyversions/build_utils.svg
+	:target:  https://pypi.python.org/pypi/build_utils/
+
+
 There is a lot of boiler plate code I would write over and over for my projects,
 especially when I try to support both ``python2`` and ``python3``. This project
 aims to simplify it and allows me to easily add update/improvements to all of my
