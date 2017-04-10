@@ -5,6 +5,7 @@ from build_utils import BuildCommand
 from build_utils import PublishCommand
 from build_utils import BinaryDistribution
 
+
 PACKAGE_NAME = 'build_utils'
 BuildCommand.pkg = PACKAGE_NAME
 BuildCommand.test = False
