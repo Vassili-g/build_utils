@@ -1,0 +1,23 @@
+doc-warnings: no
+test-warnings: no
+strictness: medium
+autodetect: yes
+pylint:
+    disable:
+        - logging-too-many-args
+        - too-many-function-args
+        - unused-import
+        - pointless-string-statement
+
+ignore-paths:
+    - docs
+    # - tmp
+    # - pics
+    # - tests
+    # - example
+    # - drivers
+    - build_utils/__init__.py
+
+python-targets:
+    - 2
+    - 3
