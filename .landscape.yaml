@@ -4,10 +4,10 @@ strictness: medium
 autodetect: yes
 pylint:
     disable:
-        - logging-too-many-args
-        - too-many-function-args
+        # - logging-too-many-args
+        # - too-many-function-args
         - unused-import
-        - pointless-string-statement
+        # - pointless-string-statement
 
 ignore-paths:
     - docs
