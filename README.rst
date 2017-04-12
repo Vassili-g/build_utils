@@ -23,10 +23,15 @@ projects at once.
 Install
 -----------
 
+Most systems come with ``python2`` installed, but if you plan on doing ``python3`` development
+then you should install that for your platform. For macOS::
+
+	brew install python3
+
 pip
 ~~~~~
 
-The recommended way to install this library is::
+The recommended way to install this library is with ``pip``::
 
 	pip install build_utils
 
