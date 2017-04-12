@@ -42,15 +42,49 @@ If you wish to develop and submit git-pulls, you can do::
 Usage
 --------
 
-To use this package, add the following to your ``setup.py``:
+To use this package, at a minimum, set your repo up like::
+
+	myLibrary/
+	|
+	+- myLibrary/
+	|   |
+	|   +- src files
+	+- tests/
+	|   |
+	|   +- test.py
+	+- setup.py
+
+Also add the following to your ``setup.py``:
 
 .. code-block:: python
 
-	PACKAGE_NAME = 'build_utils'
+	from build_utils import BuildCommand
+	from build_utils import PublishCommand
+	from build_utils import BinaryDistribution
+
+	VERSION = '1.0.0'
+	PACKAGE_NAME = 'myLibrary'
+	
+	# class to test and build the module
 	BuildCommand.pkg = PACKAGE_NAME
-	BuildCommand.test = False
+	BuildCommand.test = True  # run all tests, True by default
+	BuildCommand.py2 = True   # test and build python2, True by default
+				  # note, the test variable above controls if the tests are run
+	BuildCommand.py3 = True   # test and build python3, True by default
+	
+	# class to publish the module to PyPi
 	PublishCommand.pkg = PACKAGE_NAME
 	PublishCommand.version = VERSION
+	
+	setup(
+		name=PACKAGE_NAME,
+		version=VERSION,
+		... other options ...
+		cmdclass={
+			'publish': PublishCommand,  # run this to publish to pypi
+			'make': BuildCommand  # run this to test/build library
+		}
+	)
 
 Take a look at the setup for this library on ``github`` for an example. Note
 that by default, testing and both py2 and py3 are ``True`` by default.
@@ -58,6 +92,22 @@ Now you can build and publish a new package by::
 
 	python setup.py make
 	python setup.py publish
+
+Tests
+~~~~~~~~~
+
+This uses ``nose`` to run tests and issues the command ``python -m nose -w tests -v test.py`` where ``python`` will be either ``python2`` or ``python3`` depending on what you enabled.
+
+Now if you have more than one test file, try:
+
+.. code-block:: python
+
+	# assume you have test1.py, test2.py and test3.py ... do:
+	from .test1 import *
+	from .test2 import *
+	from .test3 import *
+
+And all should work fine.
 
 Change Log
 -------------
