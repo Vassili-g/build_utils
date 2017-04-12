@@ -8,7 +8,7 @@ from build_utils import BinaryDistribution
 
 PACKAGE_NAME = 'build_utils'
 BuildCommand.pkg = PACKAGE_NAME
-BuildCommand.test = False
+BuildCommand.test = False  # there are no tests
 PublishCommand.pkg = PACKAGE_NAME
 PublishCommand.version = VERSION
 README = open('README.rst').read()
@@ -30,12 +30,9 @@ setup(
 		'Operating System :: POSIX :: Linux',
 		'Operating System :: MacOS :: MacOS X',
 		'Operating System :: POSIX',
-		# 'Topic :: Scientific/Engineering',
-		# 'Topic :: Scientific/Engineering :: Artificial Intelligence',
-		# 'Topic :: Scientific/Engineering :: Image Recognition',
 		'Topic :: Software Development :: Libraries :: Python Modules'
 	],
-	install_requires=[],
+	install_requires=['nose', 'twine'],
 	url="https://github.com/walchko/{}".format(PACKAGE_NAME),
 	long_description=README,
 	packages=[PACKAGE_NAME],
