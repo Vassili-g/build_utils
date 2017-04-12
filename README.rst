@@ -109,6 +109,20 @@ Now if you have more than one test file, try:
 
 And all should work fine.
 
+Publishing
+------------
+
+This uses ``twine`` by default. Ensure you have a config file setup like in your home directory::
+
+	[distutils]
+	index-servers = pypi
+
+	[pypi]
+	repository: https://pypi.python.org/pypi
+	username: my-awesome-username
+	password: super-cool-passworld
+
+
 Change Log
 -------------
 
