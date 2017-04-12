@@ -58,6 +58,7 @@ Also add the following to your ``setup.py``:
 
 .. code-block:: python
 
+	... other imports ...
 	from build_utils import BuildCommand
 	from build_utils import PublishCommand
 	from build_utils import BinaryDistribution
