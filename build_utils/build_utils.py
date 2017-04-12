@@ -8,6 +8,10 @@ class BinaryDistribution(Distribution):
 	binary = False
 
 	def is_pure(self):
+# 		if self.binary:
+# 			os.system('rm -fr src/build')
+# 			os.system('rm -fr src/lib')
+# 			os.system('cd src && mkdir build && cd build && cmake .. && make')
 		return self.binary
 
 
