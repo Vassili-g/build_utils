@@ -115,6 +115,9 @@ Now if you have more than one test file, try:
 
 And all should work fine.
 
+.. image:: https://github.com/walchko/build_utils/raw/master/pics/make.gif
+	:width: 300px
+
 Publishing
 ------------
 
