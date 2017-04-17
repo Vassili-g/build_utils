@@ -1,6 +1,6 @@
 from __future__ import print_function
 from setuptools import setup
-from build_utils import __version__ as VERSION
+from build_utils.version import __version__ as VERSION
 from build_utils import BuildCommand
 from build_utils import PublishCommand
 from build_utils import BinaryDistribution
