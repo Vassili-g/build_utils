@@ -1,0 +1,2 @@
+recursive-include pics *.gif
+include MIT_License.txt

@@ -2,9 +2,6 @@
 build_utils
 ============================
 
-.. image:: https://landscape.io/github/walchko/build_utils/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/walchko/build_utils/master
-   :alt: Code Health
 .. image:: https://img.shields.io/pypi/v/build_utils.svg
     :target: https://pypi.python.org/pypi/build_utils/
     :alt: Latest Version
@@ -70,18 +67,18 @@ Also add the following to your ``setup.py``:
 
 	VERSION = '1.0.0'
 	PACKAGE_NAME = 'myLibrary'
-	
+
 	# class to test and build the module
 	BuildCommand.pkg = PACKAGE_NAME
 	BuildCommand.test = True  # run all tests, True by default
 	BuildCommand.py2 = True   # test and build python2, True by default
 				  # note, the test variable above controls if the tests are run
 	BuildCommand.py3 = True   # test and build python3, True by default
-	
+
 	# class to publish the module to PyPi
 	PublishCommand.pkg = PACKAGE_NAME
 	PublishCommand.version = VERSION
-	
+
 	setup(
 		name=PACKAGE_NAME,
 		version=VERSION,
@@ -115,8 +112,8 @@ Now if you have more than one test file, try:
 
 And all should work fine.
 
-.. image:: https://github.com/walchko/build_utils/raw/master/pics/make.gif
-	:width: 300px
+.. image:: pics/make.gif
+  :align: center
 
 Publishing
 ------------
@@ -136,6 +133,7 @@ Change Log
 -------------
 
 ============ ======= ============================
+2018-06-20   0.2.2   added some helper functions
 2017-04-09   0.1.0   init
 ============ ======= ============================
 
