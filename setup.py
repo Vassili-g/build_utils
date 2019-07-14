@@ -1,13 +1,15 @@
 from __future__ import print_function
 from setuptools import setup
-from build_utils import __version__ as VERSION
+# from build_utils import __version__ as VERSION
 from build_utils import BuildCommand
 from build_utils import PublishCommand
 from build_utils import BinaryDistribution
 from build_utils import SetGitTag
+from build_utils import get_pkg_version
 
 
 PACKAGE_NAME = 'build_utils'
+VERSION = get_pkg_version('build_utils/__init__.py')
 BuildCommand.pkg = PACKAGE_NAME
 BuildCommand.test = False  # there are no tests
 PublishCommand.pkg = PACKAGE_NAME
