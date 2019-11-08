@@ -9,6 +9,10 @@ projects, especially when I try to support both `python2` and `python3`.
 This project aims to simplify it and allows me to easily add
 update/improvements to all of my projects at once.
 
+Since `python2` is not EOL, the default for building libraries for it is set
+to `False`. See example below, but set `BuildCommand.py2 = True` to enable
+`python2` building.
+
 ## Install
 
 Most systems come with `python2` installed, but if you plan on doing
@@ -35,32 +39,35 @@ If you wish to develop and submit git-pulls, you can do:
 
 To use this package, at a minimum, set your repo up like:
 
-    myLibrary/
-    |
-    +- myLibrary/
-    |   |
-    |   +- src files
-    +- tests/
-    |   |
-    |   +- test.py
-    +- setup.py
+```
+myLibrary/
+|
++- myLibrary/
+|   |
+|   +- src files
++- tests/
+|   |
+|   +- test.py
++- setup.py
+```
 
 Also add the following to your `setup.py`:
 
-``` {.sourceCode .python}
-... other imports ...
+```python
+# ... other imports ...
 from build_utils import BuildCommand
 from build_utils import PublishCommand
 from build_utils import BinaryDistribution
 from build_utils import SetGitTag
 
-VERSION = '1.0.0'
+VERSION = get_pkg_version("myLibrary.__init__.py")  # can be any file where you
+                                                    # put version number
 PACKAGE_NAME = 'myLibrary'
 
 # class to test and build the module
 BuildCommand.pkg = PACKAGE_NAME
 BuildCommand.test = True  # run all tests, True by default, False, no tests run
-BuildCommand.py2 = True   # test and build python2, True by default
+BuildCommand.py2 = True   # test and build python2, False by default
 BuildCommand.py3 = True   # test and build python3, True by default
 
 # class to publish the module to PyPi
@@ -71,7 +78,7 @@ SetGitTag.version = VERSION
 setup(
     name=PACKAGE_NAME,
     version=VERSION,
-    ... other options ...
+    # ... other options ...
     cmdclass={
         'publish': PublishCommand,  # run this to publish to pypi
         'make': BuildCommand,       # run this to test/build library
@@ -114,7 +121,7 @@ This uses `nose` to run tests and issues the command
 
 Now if you have more than one test file, try:
 
-``` {.sourceCode .python}
+```python
 # assume you have test1.py, test2.py and test3.py ... do:
 from .test1 import *
 from .test2 import *
@@ -141,15 +148,15 @@ in your home directory:
 # Change Log
 
 | Date      | Version | Notes                    |
-------------|-------|-----------------------------
-2018-07-08  | 0.3.0 |  added git version command and colorama
-2018-06-20  | 0.2.2 |  added some helper functions
-2017-04-09  | 0.1.0 |  init
+------------|---------|-----------------------------
+2019-11-08  | 0.4.0   | set building `python2` default as `False`
+2018-07-08  | 0.3.0   | added git version command and colorama
+2018-06-20  | 0.2.2   | added some helper functions
+2017-04-09  | 0.1.0   | init
 
 # MIT License
 
-
-Copyright (c) 2017 Kevin J. Walchko
+**Copyright (c) 2017 Kevin J. Walchko**
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

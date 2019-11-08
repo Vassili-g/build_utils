@@ -11,4 +11,4 @@ from build_utils.info import get_pkg_version
 __license__ = 'MIT'
 __copyright__ = 'Copyright (c) 2017 Kevin Walchko'
 __author__ = 'Kevin J. Walchko'
-__version__ = '0.3.3'
+__version__ = '0.4.0'

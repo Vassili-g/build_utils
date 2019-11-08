@@ -23,7 +23,7 @@ class BuildCommand(Command):
     """Build binaries/packages"""
     pkg = None
     test = True     # run tests
-    py2 = True      # build python 2 package
+    py2 = False     # build python 2 package
     py3 = True      # build python 3 package
     rm_egg = False  # rm egg-info directory
     rm_so = False   # rm shared library, this is for c extensions
