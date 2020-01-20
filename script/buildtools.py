@@ -47,7 +47,7 @@ def update_script():
     os.system('rm -f buildtools.py')
     try:
         with urllib.request.urlopen(url) as response, open(filename, 'wb') as out_file:
-            shutil.copyfileobj(response, out_file)
+            copyfileobj(response, out_file)
         print(f">> {response.code}")
         # urllib.request.urlretrieve(url,"buildtools.py")
     except urllib.error.HTTPError as e:
