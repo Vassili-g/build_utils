@@ -29,7 +29,7 @@
 import os
 import sys
 from colorama import Fore, Back, Style
-from shutil import rmtree
+from shutil import rmtree, copyfileobj
 from os import path
 import urllib
 import urllib.request
@@ -43,9 +43,13 @@ def update_script():
     solution ... let's see how well it works.
     """
     url = "https://raw.githubusercontent.com/walchko/build_utils/master/script/buildtools.py"
+    filename = "buildtools.py"
     os.system('rm -f buildtools.py')
     try:
-        urllib.request.urlretrieve(url,"buildtools.py")
+        with urllib.request.urlopen(url) as response, open(filename, 'wb') as out_file:
+            shutil.copyfileobj(response, out_file)
+        print(f">> {response.code}")
+        # urllib.request.urlretrieve(url,"buildtools.py")
     except urllib.error.HTTPError as e:
         print(f">> {e}")
 
