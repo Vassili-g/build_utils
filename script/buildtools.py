@@ -42,7 +42,7 @@ def update_script():
     something before I can use the pip command on a brand new system. This is my
     solution ... let's see how well it works.
     """
-    url = ""
+    url = "https://raw.githubusercontent.com/walchko/build_utils/master/script/buildtools.py"
     try:
         urllib.request.urlretrieve(url,"buildtools.py")
     except urllib.error.HTTPError as e:
