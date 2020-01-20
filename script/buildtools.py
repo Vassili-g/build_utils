@@ -45,7 +45,7 @@ def update_script():
     """
     url = "https://raw.githubusercontent.com/walchko/build_utils/master/script/buildtools.py"
     filename = "buildtools.py"
-    os.system('rm -f buildtools.py')
+    os.system(f'rm -f {filename}')
     try:
         with urllib.request.urlopen(url) as response, open(filename, 'wb') as out_file:
             copyfileobj(response, out_file)
@@ -53,6 +53,7 @@ def update_script():
         # urllib.request.urlretrieve(url,"buildtools.py")
     except urllib.error.HTTPError as e:
         print(f">> {e}")
+    os.system(f'chmod a+x {filename}')
 
 # from psutils
 def get_pkg_version(relfile):
