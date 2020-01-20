@@ -30,6 +30,7 @@ import os
 import sys
 from colorama import Fore, Back, Style
 from shutil import rmtree, copyfileobj
+import shutil
 from os import path
 import urllib
 import urllib.request
