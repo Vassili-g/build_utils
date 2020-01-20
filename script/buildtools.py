@@ -43,6 +43,7 @@ def update_script():
     solution ... let's see how well it works.
     """
     url = "https://raw.githubusercontent.com/walchko/build_utils/master/script/buildtools.py"
+    os.system('rm -f buildtools.py')
     try:
         urllib.request.urlretrieve(url,"buildtools.py")
     except urllib.error.HTTPError as e:
