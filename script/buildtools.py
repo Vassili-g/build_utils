@@ -179,5 +179,6 @@ class BuildCommand:
         os.system(f"unset PYTHONPATH; twine upload dist/{self.pkg}-{self.version}*")
 
 if __name__ == "__main__":
-    b = BuildCommand("mdh")
-    b.build()
+    update_script()
+#     b = BuildCommand("mdh")
+#     b.build()
