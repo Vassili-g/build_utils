@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/pypi/l/build_utils.svg)](https://pypi.python.org/pypi/build_utils/)
 [![image](https://img.shields.io/pypi/pyversions/build_utils.svg)](https://pypi.python.org/pypi/build_utils/)
 
+**Deprecated: since Python 2.0 is dead and I move my libraries to `pyproject.toml`, this library is not needed**
+
 There is a lot of boiler plate code I would write over and over for my
 projects, especially when I try to support both `python2` and `python3`.
 This project aims to simplify it and allows me to easily add
